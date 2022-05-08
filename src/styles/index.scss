@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background-color: #1f1f1f;
@@ -15,7 +21,6 @@ code {
 
 header {
   height: 100vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,10 +40,11 @@ header {
   }
 
   h3 {
+    color: #a8a8a8;
     font-weight: normal;
     font-size: 1.5rem;
   }
-  
+
   a {
     margin-top: auto;
     margin-bottom: 3rem;
@@ -51,8 +57,59 @@ header {
   }
 }
 
+.hidden {
+  display: none;
+}
+
 main {
   min-height: 100vh;
-  width: 100vw;
+  padding: 5rem 10rem 5rem 10rem;
   display: flex;
+  gap: 4rem;
+
+  aside {
+    width: 320px;
+
+    .error {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 12px;
+      text-align: center;
+      vertical-align: middle;
+      width: 100%;
+      color: white;
+      background-color: #d13b3b;
+      border-radius: 10px;
+      border: #992727 solid 2px;
+    }
+
+    input {
+      margin-top: 1rem;
+      min-height: 64px;
+      color: #a8a8a8;
+      background-color: #262626;
+      font-size: 1.2rem;
+      padding-left: 20px;
+
+      border: none;
+      border-radius: 10px;
+      border: #404040 solid 2px;
+      width: 100%;
+
+      &[type=submit] {
+        padding: 0;
+        border: none;
+        cursor: pointer;
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: white;
+        background-color: #D5006D;
+      }
+    }
+  }
+
+  section {
+    width: 100%;
+  }
 }
