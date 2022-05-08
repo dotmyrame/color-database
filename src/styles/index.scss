@@ -70,7 +70,7 @@ main {
   aside {
     width: 320px;
 
-    .error {
+    div {
       font-size: 0.8rem;
       font-weight: 600;
       padding: 12px;
@@ -78,9 +78,18 @@ main {
       vertical-align: middle;
       width: 100%;
       color: white;
+    }
+
+    .error {
       background-color: #d13b3b;
       border-radius: 10px;
       border: #992727 solid 2px;
+    }
+
+    .sended {
+      background-color: #31994b;
+      border-radius: 10px;
+      border: #185f2a solid 2px;
     }
 
     input {

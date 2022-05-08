@@ -69,10 +69,14 @@ export class InputForm extends React.Component<InputFormProps, InputFormState> {
 
   handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    let data = event.currentTarget.children[1].getAttribute("value");
+    let data = event.currentTarget.children[2].getAttribute("value");
     if (data) {
       try {
         localStorage.setItem((localStorage.length + 1).toString(), data)
+        this.setState({ sended: true })
+        setTimeout(() => {
+          this.setState({ sended: false })
+        }, 5000)
       } catch (error) {
         console.log(error)
       }
@@ -84,6 +88,9 @@ export class InputForm extends React.Component<InputFormProps, InputFormState> {
       <form method={this.props.method} onSubmit={(e) => this.handleSubmit(e)}>
         <div className={`error ${this.state.hidden ? 'hidden' : null}`}>
           Provided color is invalid.
+        </div>
+        <div className={`sended ${this.state.sended ? null : 'hidden'}`}>
+          Color added to database.
         </div>
         <input type="text" placeholder="eg. #abcdef" value={this.state.value} name={this.props.name} maxLength={16} onChange={(e) => this.handleChange(e, this.props)} />
         <input type="submit" id={this.props.name} disabled={true} value="Add to database" />
